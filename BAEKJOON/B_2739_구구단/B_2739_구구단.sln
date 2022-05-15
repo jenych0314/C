@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "B_2739_구구단", "B_2739_구구단.vcxproj", "{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Debug|x64.ActiveCfg = Debug|x64
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Debug|x64.Build.0 = Debug|x64
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Debug|x86.ActiveCfg = Debug|Win32
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Debug|x86.Build.0 = Debug|Win32
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Release|x64.ActiveCfg = Release|x64
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Release|x64.Build.0 = Release|x64
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Release|x86.ActiveCfg = Release|Win32
+		{CCE05091-3138-45D4-B0B9-BC8E6BF552DE}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2173A719-34B2-4753-8299-C98CB0188CE4}
+	EndGlobalSection
+EndGlobal

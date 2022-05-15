@@ -1,0 +1,4 @@
+﻿  B_10171_고양이.cpp
+C:\Users\jeony\OneDrive\바탕 화면\C++\B_10171_고양이\B_10171_고양이.cpp(5,17): warning C4129: ' ': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+C:\Users\jeony\OneDrive\바탕 화면\C++\B_10171_고양이\B_10171_고양이.cpp(8,9): warning C4129: '|': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+  B_10171_고양이.vcxproj -> C:\Users\jeony\OneDrive\바탕 화면\C++\B_10171_고양이\x64\Debug\B_10171_고양이.exe

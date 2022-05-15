@@ -1,0 +1,4 @@
+﻿  B_2475_검증수.cpp
+C:\Users\jeony\OneDrive\바탕 화면\C++\B_2475_검증수\B_2475_검증수.cpp(5,17): warning C4129: ' ': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+C:\Users\jeony\OneDrive\바탕 화면\C++\B_2475_검증수\B_2475_검증수.cpp(8,9): warning C4129: '|': 문자 이스케이프 시퀀스를 인식할 수 없습니다.
+  B_2475_검증수.vcxproj -> C:\Users\jeony\OneDrive\바탕 화면\C++\B_2475_검증수\x64\Debug\B_2475_검증수.exe
