@@ -1,0 +1,12 @@
+﻿main.obj : error LNK2019: attroffmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: attronmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: endwinmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: init_pairmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: initscrmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: printwmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: refreshmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: start_colormain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: wgetchmain 함수에서 참조되는 확인할 수 없는 외부 기호
+main.obj : error LNK2019: __imp_stdscrmain 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\jeony\Desktop\C\SNAKEGAME\test1\Library\lib\pdcurses.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\jeony\Desktop\C\SNAKEGAME\test1\x64\Debug\test1.exe : fatal error LNK1120: 10개의 확인할 수 없는 외부 참조입니다.
