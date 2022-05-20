@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "H_2차원점", "H_2차원점.vcxproj", "{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Debug|x64.ActiveCfg = Debug|x64
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Debug|x64.Build.0 = Debug|x64
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Debug|x86.ActiveCfg = Debug|Win32
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Debug|x86.Build.0 = Debug|Win32
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Release|x64.ActiveCfg = Release|x64
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Release|x64.Build.0 = Release|x64
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Release|x86.ActiveCfg = Release|Win32
+		{A0FB14A4-0FD6-4968-B451-4D44A66AEEF9}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFC73E3B-9A49-4314-96A7-3236CDA21B10}
+	EndGlobalSection
+EndGlobal
