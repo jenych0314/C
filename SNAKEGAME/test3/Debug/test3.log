@@ -1,2 +1,5 @@
-﻿  main.cpp
-  test3.vcxproj -> C:\Users\jeony\Desktop\C\SNAKEGAME\test3\Debug\test3.exe
+﻿  test3.vcxproj -> C:\Users\jeony\Desktop\C\SNAKEGAME\test3\Debug\test3.exe
+  'xcopy'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+  배치 파일이 아닙니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: "xcopy /y /d "C:\Users\jeony\Desktop\C\SNAKEGAME\test3\Library\dllDebug\pdcurses.dll"
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(157,5): error MSB3073: :VCEnd" 명령이 종료되었습니다(코드: 9009).
