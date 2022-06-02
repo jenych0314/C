@@ -6,45 +6,47 @@ myTerm::myTerm(int c, unsigned e) : coeff(c), exp(e)
 }
 
 // copy constructor
-myTerm::myTerm(const myTerm& term) : coeff(term.coeff), exp(term.exp)
+myTerm::myTerm(const myTerm &term) : coeff(term.coeff), exp(term.exp)
 {
-}
-
-// overloaded operators
-bool myTerm::operator == (const myTerm& term) const
-{
-	return (this->coeff == term.coeff) && (this->exp == term.exp);
-}
-
-// overloaded operators
-bool myTerm::operator != (const myTerm & term) const
-{
-	return !((*this) == term);
-}
-
-// overloaded operators
-bool myTerm::operator < (const myTerm & term) const
-{
-	/*if (this->exp == term.exp)
-		return this->coeff > term.coeff;*/
-	return exp > term.exp;
-}
-
-myTerm myTerm::operator -() const
-{
-	return -this-> coeff;
 }
 
 // derivative of a term
 myTerm myTerm::ddx() const
 {
-	if (exp == 0)
+	if (this->exp == 0)
+	{
 		return myTerm(0, 0);
-	return myTerm(exp * coeff, exp - 1);
+	}
+	return myTerm(this->exp * this->coeff, this->exp - 1);
+}
+
+// overloaded operators
+bool myTerm::operator==(const myTerm &term) const
+{
+	return (this->coeff == term.coeff) && (this->exp == term.exp);
+}
+
+// overloaded operators
+bool myTerm::operator!=(const myTerm &term) const
+{
+	return !((*this) == term);
+}
+
+// overloaded operators
+bool myTerm::operator<(const myTerm &term) const
+{
+	if (this->exp == term.exp)
+		return this->coeff > term.coeff;
+	return this->exp > term.exp;
+}
+
+myTerm myTerm::operator-() const
+{
+	return -this->coeff;
 }
 
 // output operator
-ostream& operator <<(ostream & outStream, const myTerm & term)
+ostream &operator<<(ostream &outStream, const myTerm &term)
 {
 	if (term.exp == 0)
 		if (term.coeff == 0) // nothing to output

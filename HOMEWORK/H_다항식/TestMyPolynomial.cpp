@@ -20,11 +20,11 @@ void testSimpleCase()
 	cout << myPolynomial::X << endl;
 
 	myPolynomial p0, p1(1), p2(1, 1), p3(3, 5);
-	int testData4[10] = { 1, 0, 1, 1, 1, 2, 1, 3, 1, 4 };
-	int testData5[10] = { -1, 0, -1, 1, -1, 2, -1, 3, -1, 4 };
-	int testData6[10] = { 1, 0, -1, 1, 1, 2, -1, 3, 1, 4 };
-	int testData7[10] = { 2, 2, 5, 5, 4, 4, 1, 1, 3, 3 };
-	int testData8[12] = { 1, 1000000000, 1, 100000000, 1, 1000000, 1, 10000, 1, 100, 1, 0 };
+	int testData4[10] = {1, 0, 1, 1, 1, 2, 1, 3, 1, 4};
+	int testData5[10] = {-1, 0, -1, 1, -1, 2, -1, 3, -1, 4};
+	int testData6[10] = {1, 0, -1, 1, 1, 2, -1, 3, 1, 4};
+	int testData7[10] = {2, 2, 5, 5, 4, 4, 1, 1, 3, 3};
+	int testData8[12] = {1, 1000000000, 1, 100000000, 1, 1000000, 1, 10000, 1, 100, 1, 0};
 
 	myPolynomial p4(5, testData4);
 	myPolynomial p5(5, testData5);
@@ -34,8 +34,11 @@ void testSimpleCase()
 	myPolynomial p9(p7);
 
 	// test constructor
-	cout << p0 << endl << p1 << endl << p2 << endl;
-	cout << p4 << endl << p8 << endl;
+	cout << p0 << endl
+		 << p1 << endl
+		 << p2 << endl;
+	cout << p4 << endl
+		 << p8 << endl;
 
 	// test copy constructor
 	cout << p9 << endl;
@@ -91,7 +94,7 @@ void testDataFromFile()
 	cin >> numTestCases;
 	for (int i = 0; i < numTestCases; i++)
 	{
-		int numTerms, terms[100];
+		int numTerms, terms[100] = {0};
 		/* read first polynomial */
 		cin >> numTerms;
 		for (int j = 0; j < numTerms; j++)
@@ -104,11 +107,19 @@ void testDataFromFile()
 			cin >> terms[2 * j] >> terms[2 * j + 1];
 		myPolynomial p2(numTerms, terms);
 
-		cout << p1 << endl << p2 << endl;
+		// cout << "test1: " << endl;
+		cout << p1 << endl
+			 << p2 << endl;
+		// cout << "test2: " << endl;
 		cout << p1.getDegree() << " " << p2.getNumTerms() << endl;
-		cout << p1.ddx() << endl << p2.ddx() << endl;
+		// cout << "test3: " << endl;
+		cout << p1.ddx() << endl
+			 << p2.ddx() << endl;
+		// cout << "test4: " << endl;
 		cout << (p1 == p2) << " " << (p1 != p2) << endl;
+		// cout << "test5: " << endl;
 		cout << p1(1) << endl;
+		// cout << "test6: " << endl;
 		cout << -p1 + p1 * 2 * p2 - p2 * 2 + 3 * p1 << endl;
 
 		myPolynomial p3(myPolynomial::ZERO), p4(myPolynomial::ONE), p5(myPolynomial::X);
@@ -116,6 +127,7 @@ void testDataFromFile()
 		p4 -= p2;
 		p5 *= p4;
 		p5 *= 2;
+		// cout << "test7: " << endl;
 		cout << p5 << endl;
 	}
 }

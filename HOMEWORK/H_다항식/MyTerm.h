@@ -12,31 +12,32 @@ public:
 	myTerm(int c = 0, unsigned e = 0);
 
 	// copy constructor
-	myTerm(const myTerm& term);
+	myTerm(const myTerm &term);
 
 	// accessor functions
-	int getCoeff() const { return coeff; }
-	unsigned getExp() const { return exp; }
+	int getCoeff() const { return this->coeff; }
+	unsigned getExp() const { return this->exp; }
 
 	// mutator functions
-	void setCoeff(int c) { coeff = c; }
-	void setExp(unsigned e) { exp = e; }
+	void setCoeff(int c) { this->coeff = c; }
+	void setExp(unsigned e) { this->exp = e; }
 
 	// member functions
 	myTerm ddx() const; // derivative of a term
 
 	// overloaded operators
-	bool operator == (const myTerm& term) const;
-	bool operator != (const myTerm& term) const;
-	bool operator < (const myTerm& term) const;
-	myTerm operator -() const;
+	bool operator==(const myTerm &term) const;
+	bool operator!=(const myTerm &term) const;
+	bool operator<(const myTerm &term) const;
+	myTerm operator-() const;
 
 	// friend functions and classes
-	friend ostream& operator <<(ostream& outStream, const myTerm& term);
+	friend ostream &operator<<(ostream &outStream, const myTerm &term);
 	friend myPolynomial;
+
 private:
-	int coeff; // integer coefficient
-	unsigned exp; // exponent (non-negative integer)
+	int coeff;		  // integer coefficient
+	unsigned int exp; // exponent (non-negative integer)
 };
 
 #endif _MYTERM_H_
