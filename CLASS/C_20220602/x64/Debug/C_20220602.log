@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\jeony\Desktop\C\CLASS\C_20220602\main.cpp(56,23): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+  C_20220602.vcxproj -> C:\Users\jeony\Desktop\C\CLASS\C_20220602\x64\Debug\C_20220602.exe
