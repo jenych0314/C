@@ -2,7 +2,7 @@
 #define _MYPOLYNOMIAL_H_
 
 #include <iostream>
-#include <list>
+#include <vector>
 #include "MyTerm.h"
 
 using namespace std;
@@ -13,16 +13,14 @@ public:
 	myPolynomial(int c = 0, unsigned e = 0);
 	myPolynomial(int nTerms, int mono[]);
 	myPolynomial(int nTerms, myTerm terms[]);
-
-	~myPolynomial();
+	myPolynomial(vector<myTerm> v);
 
 	// copy constructor
 	myPolynomial(const myPolynomial &poly);
+	~myPolynomial();
 
 	int getDegree() const;		  // get a degree of the polynomial
 	unsigned getNumTerms() const; // number of terms in the polynomial
-
-	void setCoeff(int idx, int c);
 
 	myPolynomial ddx() const; // derivative of a polynomial
 
@@ -57,8 +55,8 @@ public:
 	static const myPolynomial X;	// P(x) = x
 private:
 	int degree; // maximum expnent
-	int numTerms;
-	myTerm *terms;
+	int numTerms = 1;
+	myTerm* terms;
 };
 
 #endif _MYPOLYNOMIAL_H_
