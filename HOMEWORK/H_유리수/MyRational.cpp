@@ -2,8 +2,9 @@
 
 myRational::myRational(long num, long den)
 {
-	//cout << "constructor" << endl;
-	if ((num != 0 && den != 0)) {
+	// cout << "constructor" << endl;
+	if ((num != 0 && den != 0))
+	{
 		long _gcd = gcd(num, den);
 		num /= _gcd;
 		den /= _gcd;
@@ -13,14 +14,14 @@ myRational::myRational(long num, long den)
 	this->_den = den;
 }
 
-myRational::myRational(const myRational& rat)
+myRational::myRational(const myRational &rat)
 {
 	(*this) = rat;
 }
 
 long myRational::gcd(long m, long n)
 {
-	//cout << "gcd " << "m: " << m << ", n: " << n << endl;
+	// cout << "gcd " << "m: " << m << ", n: " << n << endl;
 	if (m < 0 || n < 0)
 		return 1;
 
@@ -65,7 +66,7 @@ long myRational::getDenominator() const
 
 myRational myRational::reciprocal()
 {
-	//cout << "reciprocal" << endl;
+	// cout << "reciprocal" << endl;
 	long new_num = _num, new_den = _den;
 	long _gcd = gcd(new_num, new_den);
 
@@ -78,225 +79,225 @@ myRational myRational::reciprocal()
 	return (*this);
 }
 
-myRational myRational::operator + (const myRational& rat) const
+myRational myRational::operator+(const myRational &rat) const
 {
 	long new_num = rat._den * this->_num + this->_den * rat._num;
 	long new_den = this->_den * rat._den;
 	return myRational(new_num, new_den);
 }
-myRational myRational::operator - (const myRational& rat) const
+myRational myRational::operator-(const myRational &rat) const
 {
 	long new_num = rat._den * this->_num - this->_den * rat._num;
 	long new_den = this->_den * rat._den;
 	return myRational(new_num, new_den);
 }
-myRational myRational::operator * (const myRational& rat) const
+myRational myRational::operator*(const myRational &rat) const
 {
 	long new_num = this->_num * rat._num;
 	long new_den = this->_den * rat._den;
 	return myRational(new_num, new_den);
 }
-myRational myRational::operator / (const myRational& rat) const
+myRational myRational::operator/(const myRational &rat) const
 {
-	if (rat._num == 0) return 0;
+	if (rat._num == 0)
+		return 0;
 
 	long new_num = this->_num * rat._den;
 	long new_den = this->_den * rat._num;
 	return myRational(new_num, new_den);
 }
 
-myRational myRational::operator + (const int value) const
+myRational myRational::operator+(const int value) const
 {
 	return (*this) + myRational(value, 1);
 }
-myRational myRational::operator - (const int value) const
+myRational myRational::operator-(const int value) const
 {
 	return (*this) - myRational(value, 1);
 }
-myRational myRational::operator * (const int value) const
+myRational myRational::operator*(const int value) const
 {
 	return (*this) * myRational(value, 1);
 }
-myRational myRational::operator / (const int value) const
+myRational myRational::operator/(const int value) const
 {
 	return (*this) / myRational(value, 1);
 }
 
-myRational operator + (int value, const myRational& rat)
+myRational operator+(int value, const myRational &rat)
 {
 	return myRational(value, 1) + rat;
 }
-myRational operator - (int value, const myRational& rat)
+myRational operator-(int value, const myRational &rat)
 {
 	return myRational(value, 1) - rat;
 }
-myRational operator * (int value, const myRational& rat)
+myRational operator*(int value, const myRational &rat)
 {
 	return myRational(value, 1) * rat;
 }
-myRational operator / (int value, const myRational& rat)
+myRational operator/(int value, const myRational &rat)
 {
 	return myRational(value, 1) / rat;
 }
 
-myRational &myRational::operator ++()
+myRational &myRational::operator++()
 {
 	(*this) += 1;
 	return (*this);
 }
-myRational myRational::operator ++(int)
+myRational myRational::operator++(int)
 {
 	myRational temp = (*this);
 	operator++();
 	return temp;
 }
-myRational &myRational::operator --()
+myRational &myRational::operator--()
 {
 	(*this) -= 1;
 	return (*this);
 }
-myRational myRational::operator --(int)
+myRational myRational::operator--(int)
 {
 	myRational temp = (*this);
 	operator--();
 	return temp;
 }
 
-myRational myRational::operator -()
+myRational myRational::operator-()
 {
 	return (-1) * (*this);
 }
 
-bool myRational::operator < (const myRational& rat) const
+bool myRational::operator<(const myRational &rat) const
 {
-	return this->_num * rat._den < rat._num* this->_den;
+	return this->_num * rat._den < rat._num * this->_den;
 }
-bool myRational::operator <= (const myRational& rat) const
+bool myRational::operator<=(const myRational &rat) const
 {
-	return this->_num * rat._den <= rat._num* this->_den;
+	return this->_num * rat._den <= rat._num * this->_den;
 }
-bool myRational::operator > (const myRational& rat) const
+bool myRational::operator>(const myRational &rat) const
 {
-	return this->_num * rat._den > rat._num* this->_den;
+	return this->_num * rat._den > rat._num * this->_den;
 }
-bool myRational::operator >= (const myRational& rat) const
+bool myRational::operator>=(const myRational &rat) const
 {
-	return this->_num * rat._den >= rat._num* this->_den;
+	return this->_num * rat._den >= rat._num * this->_den;
 }
-bool myRational::operator == (const myRational& rat) const
+bool myRational::operator==(const myRational &rat) const
 {
-	return this->_num * rat._den == rat._num* this->_den;
+	return this->_num * rat._den == rat._num * this->_den;
 }
-bool myRational::operator != (const myRational& rat) const
+bool myRational::operator!=(const myRational &rat) const
 {
-	return this->_num * rat._den != rat._num* this->_den;
+	return this->_num * rat._den != rat._num * this->_den;
 }
 
-bool myRational::operator < (const int value) const
+bool myRational::operator<(const int value) const
 {
 	return (*this) < myRational(value, 1);
 }
-bool myRational::operator <= (const int value) const
+bool myRational::operator<=(const int value) const
 {
 	return (*this) <= myRational(value, 1);
 }
-bool myRational::operator > (const int value) const
+bool myRational::operator>(const int value) const
 {
 	return (*this) > myRational(value, 1);
 }
-bool myRational::operator >= (const int value) const
+bool myRational::operator>=(const int value) const
 {
 	return (*this) >= myRational(value, 1);
 }
-bool myRational::operator == (const int value) const
+bool myRational::operator==(const int value) const
 {
 	return (*this) == myRational(value, 1);
 }
-bool myRational::operator != (const int value) const
+bool myRational::operator!=(const int value) const
 {
 	return (*this) != myRational(value, 1);
 }
 
-myRational operator < (int value, const myRational& rat)
+myRational operator<(int value, const myRational &rat)
 {
 	return myRational(value, 1) < rat;
 }
-myRational operator <= (int value, const myRational& rat)
+myRational operator<=(int value, const myRational &rat)
 {
 	return myRational(value, 1) <= rat;
 }
-myRational operator > (int value, const myRational& rat)
+myRational operator>(int value, const myRational &rat)
 {
 	return myRational(value, 1) > rat;
 }
-myRational operator >= (int value, const myRational& rat)
+myRational operator>=(int value, const myRational &rat)
 {
 	return myRational(value, 1) >= rat;
 }
-myRational operator == (int value, const myRational& rat)
+myRational operator==(int value, const myRational &rat)
 {
 	return myRational(value, 1) == rat;
 }
-myRational operator != (int value, const myRational& rat)
+myRational operator!=(int value, const myRational &rat)
 {
 	return myRational(value, 1) != rat;
 }
 
-
-myRational &myRational::operator = (const myRational& rat) 
+myRational &myRational::operator=(const myRational &rat)
 {
 	this->_num = rat._num;
 	this->_den = rat._den;
 	return (*this);
 }
-myRational &myRational::operator += (const myRational& rat)
+myRational &myRational::operator+=(const myRational &rat)
 {
 	(*this) = (*this) + rat;
 	return (*this);
 }
-myRational &myRational::operator -= (const myRational& rat)
+myRational &myRational::operator-=(const myRational &rat)
 {
 	(*this) = (*this) - rat;
 	return (*this);
 }
-myRational &myRational::operator *= (const myRational& rat)
+myRational &myRational::operator*=(const myRational &rat)
 {
 	(*this) = (*this) * rat;
 	return (*this);
 }
-myRational &myRational::operator /= (const myRational& rat)
+myRational &myRational::operator/=(const myRational &rat)
 {
 	(*this) = (*this) / rat;
 	return (*this);
 }
 
-myRational &myRational::operator = (const int value)
+myRational &myRational::operator=(const int value)
 {
 	(*this) = myRational(value, 1);
 	return (*this);
 }
-myRational &myRational::operator += (const int value)
+myRational &myRational::operator+=(const int value)
 {
 	(*this) += myRational(value);
 	return (*this);
 }
-myRational &myRational::operator -= (const int value)
+myRational &myRational::operator-=(const int value)
 {
 	(*this) -= myRational(value);
 	return (*this);
 }
-myRational &myRational::operator *= (const int value)
+myRational &myRational::operator*=(const int value)
 {
 	(*this) *= myRational(value);
 	return (*this);
 }
-myRational &myRational::operator /= (const int value)
+myRational &myRational::operator/=(const int value)
 {
 	(*this) /= myRational(value);
 	return (*this);
 }
 
-ostream& operator <<(ostream& outStream, const myRational& r)
+ostream &operator<<(ostream &outStream, const myRational &r)
 {
 	if (r._num == 0)
 		outStream << 0;
@@ -310,7 +311,7 @@ ostream& operator <<(ostream& outStream, const myRational& r)
 	return outStream;
 }
 
-istream& operator >>(istream& inStream, myRational& r)
+istream &operator>>(istream &inStream, myRational &r)
 {
 	inStream >> r._num >> r._den;
 	if (r._den == 0)

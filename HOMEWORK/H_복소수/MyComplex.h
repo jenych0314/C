@@ -11,61 +11,62 @@ private:
 	int realPart;
 	int imaginaryPart;
 	int norm() const;
+
 public:
-	// Constructor (»ý¼ºÀÚ)
+	// Constructor (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	myComplex(int real = 0, int imag = 0);
 
-	// Copy constructor (º¹»ç »ý¼ºÀÚ)
-	myComplex(const myComplex& number);
+	// Copy constructor (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+	myComplex(const myComplex &number);
 
-	// Accessor functions (Á¢±ÙÀÚ)
+	// Accessor functions (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	int getRealPart() const;
 	int getImaginaryPart() const;
 
-	// Mutator functions (º¯°æÀÚ)
+	// Mutator functions (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	void setRealPart(int real);
 	void setImaginaryPart(int imag);
 	void set(int real, int imag);
 
 	// Overloaded binary operators
-	myComplex operator + (const myComplex& number) const;
-	myComplex operator + (int value);
-	friend myComplex operator + (int value, const myComplex& number);
-	myComplex operator - (const myComplex& number) const;
-	myComplex operator - (int value);
-	friend myComplex operator - (int value, const myComplex& number);
-	myComplex operator * (const myComplex& number) const;
-	myComplex operator * (int value);
-	friend myComplex operator * (int value, const myComplex& number);
+	myComplex operator+(const myComplex &number) const;
+	myComplex operator+(int value);
+	friend myComplex operator+(int value, const myComplex &number);
+	myComplex operator-(const myComplex &number) const;
+	myComplex operator-(int value);
+	friend myComplex operator-(int value, const myComplex &number);
+	myComplex operator*(const myComplex &number) const;
+	myComplex operator*(int value);
+	friend myComplex operator*(int value, const myComplex &number);
 
 	// Overloaded assignment operators
-	myComplex& operator = (const myComplex& number);
-	myComplex& operator = (int value);
-	myComplex& operator += (const myComplex& number);
-	//myComplex& operator += (int value);
-	myComplex& operator -= (const myComplex& number);
-	//myComplex& operator -= (int value);
-	myComplex& operator *= (const myComplex& number);
-	//myComplex& operator *= (int value);
+	myComplex &operator=(const myComplex &number);
+	myComplex &operator=(int value);
+	myComplex &operator+=(const myComplex &number);
+	// myComplex& operator += (int value);
+	myComplex &operator-=(const myComplex &number);
+	// myComplex& operator -= (int value);
+	myComplex &operator*=(const myComplex &number);
+	// myComplex& operator *= (int value);
 
 	// Overloading relational operators
-	bool operator == (const myComplex& number) const;
-	bool operator != (const myComplex& number) const;
-	bool operator > (const myComplex& number) const;
-	bool operator >= (const myComplex& number) const;
-	bool operator < (const myComplex& number) const;
-	bool operator <= (const myComplex& number) const;
+	bool operator==(const myComplex &number) const;
+	bool operator!=(const myComplex &number) const;
+	bool operator>(const myComplex &number) const;
+	bool operator>=(const myComplex &number) const;
+	bool operator<(const myComplex &number) const;
+	bool operator<=(const myComplex &number) const;
 
 	// Overloaded unary operators
-	myComplex operator -();
-	myComplex operator ~();
-	myComplex &operator ++();
-	myComplex operator ++(int);
-	myComplex &operator --();
-	myComplex operator --(int);
+	myComplex operator-();
+	myComplex operator~();
+	myComplex &operator++();
+	myComplex operator++(int);
+	myComplex &operator--();
+	myComplex operator--(int);
 
-	friend ostream& operator << (ostream& outStream, const myComplex& number);
-	friend istream& operator >> (istream& inStream, myComplex& number);
+	friend ostream &operator<<(ostream &outStream, const myComplex &number);
+	friend istream &operator>>(istream &inStream, myComplex &number);
 };
 
 #endif

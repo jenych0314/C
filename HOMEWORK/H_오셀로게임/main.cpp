@@ -4,74 +4,86 @@ using namespace std;
 
 void solve(int cnt);
 
-int main() {
+int main()
+{
 	int t;
 	cin >> t;
 
-	for (int i = 0; i < t; i++) {
+	for (int i = 0; i < t; i++)
+	{
 		int n;
 		cin >> n;
 		solve(n);
 	}
 }
 
-void solve(int cnt) {
-	// ¿À¼¿·ÎÆÇ ÃÊ±âÈ­
-	char** arr = new char* [8];
-	for (int i = 0; i < 8; i++) {
-		arr[i] = new char[8]{ '+', '+', '+' , '+' , '+' , '+' , '+' , '+' };
+void solve(int cnt)
+{
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+	char **arr = new char *[8];
+	for (int i = 0; i < 8; i++)
+	{
+		arr[i] = new char[8]{'+', '+', '+', '+', '+', '+', '+', '+'};
 	}
 	arr[3][3] = arr[4][4] = 'O';
 	arr[3][4] = arr[4][3] = 'X';
 
-
-	for (int i = 0; i < cnt; i++) {
+	for (int i = 0; i < cnt; i++)
+	{
 		int xIdx, yIdx;
 		cin >> xIdx >> yIdx;
-		// ¹è¿­ÀÇ ÁÂÇ¥°ªÀÇ ¸ÂÃã.
+		// ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		xIdx--;
 		yIdx--;
 
 		char piece = (i % 2 == 0) ? 'X' : 'O';
 		arr[yIdx][xIdx] = piece;
-		int direction[8][2] = { {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1,-1}, {-1, 0}, {-1, 1} }; // ÁøÇàÇÒ ¹æÇâÀÇ Áõ°¨°ªÀ» ´ã°í ÀÖ´Â ¹è¿­ (x, y)
-		for (int i = 0; i < 8; i++) {
-			int path[8][2] = { {-1, -1}, {-1, -1} , {-1, -1} , {-1, -1} , {-1, -1} , {-1, -1} , {-1, -1} , {-1, -1} }; // ÇöÀç piece¿Í ´Ù¸¥ piece¸¦ ¹ß°ßÇÒ °æ¿ì Áö³ª°£ °æ·Î¸¦ ±â¾ïÇÒ ¹è¿­ (x, y)
-			int currX = xIdx + direction[i][0], currY = yIdx + direction[i][1]; // ÇöÀç Áö³ª°¡°í ÀÖ´Â °æ·ÎÀÇ ÁÂÇ¥
-			bool check = false; // °°Àº piecd¸¦ ¸¸³µ´ÂÁö ¿©ºÎ ÆÇ´Ü
-			int pathCnt = 0; // pathÀÇ µé¾î°£ °³¼ö
-			while ((0 <= currX && currX <= 7) && (0 <= currY && currY <= 7)) { // ÇöÀç ÁÂÇ¥°¡ ¿À¼¿·Î ÆÇ ³»ºÎÀÇ ÀÖÀ» ¶§
-				if (arr[currY][currX] == '+') // ºó Ä­ÀÏ °æ¿ì
+		int direction[8][2] = {{0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}, {-1, 0}, {-1, 1}}; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½è¿­ (x, y)
+		for (int i = 0; i < 8; i++)
+		{
+			int path[8][2] = {{-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}, {-1, -1}}; // ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½Ù¸ï¿½ pieceï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ (x, y)
+			int currX = xIdx + direction[i][0], currY = yIdx + direction[i][1];								   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥
+			bool check = false;																				   // ï¿½ï¿½ï¿½ï¿½ piecdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½
+			int pathCnt = 0;																				   // pathï¿½ï¿½ ï¿½ï¿½î°£ ï¿½ï¿½ï¿½ï¿½
+			while ((0 <= currX && currX <= 7) && (0 <= currY && currY <= 7))
+			{								  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				if (arr[currY][currX] == '+') // ï¿½ï¿½ Ä­ï¿½ï¿½ ï¿½ï¿½ï¿½
 					break;
-				else if (arr[currY][currX] == piece) { // ÇöÀç piece¿Í °°Àº pieceÀÏ °æ¿ì
+				else if (arr[currY][currX] == piece)
+				{ // ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½ï¿½ï¿½
 					check = true;
 					break;
 				}
-				else { // ÇöÀç piece¿Í ´Ù¸¥ pieceÀÏ °æ¿ì
-					// path¿¡ (currX, currY) Ãß°¡
+				else
+				{ // ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½Ù¸ï¿½ pieceï¿½ï¿½ ï¿½ï¿½ï¿½
+					// pathï¿½ï¿½ (currX, currY) ï¿½ß°ï¿½
 					path[pathCnt][0] = currX;
 					path[pathCnt][1] = currY;
 					pathCnt++;
 
-					// ÇöÀç ÁøÇà ¹æÇâÀ¸·Î currX, currY Áõ°¨
+					// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ currX, currY ï¿½ï¿½ï¿½ï¿½
 					currX += direction[i][0];
 					currY += direction[i][1];
 				}
 			}
-			if (check) { // ÇöÀç piece¿Í °°Àº piece¸¦ ¸¸³µÀ» ¶§
-				for (int i = 0; i < 8; i++) {
-					if (path[i][0] == -1 || path[i][1] == -1) // Áö³ª°£ °æ·Î°¡ ¾Æ´Ò °æ¿ì Á¾·á
+			if (check)
+			{ // ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ pieceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+				for (int i = 0; i < 8; i++)
+				{
+					if (path[i][0] == -1 || path[i][1] == -1) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Î°ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						break;
-					arr[path[i][1]][path[i][0]] = piece; // Áö³ª°£ °æ·ÎÀÏ °æ¿ì ÇöÀç piece ¸ð¾çÀ¸·Î º¯°æ.
+					arr[path[i][1]][path[i][0]] = piece; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ piece ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 				}
 			}
 		}
 	}
 
-	// °ËÀº µ¹, Èò µ¹ °³¼ö ¼¼±â
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	int white = 0, black = 0;
-	for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
 			if (arr[i][j] == 'O')
 				white++;
 			if (arr[i][j] == 'X')
@@ -79,16 +91,19 @@ void solve(int cnt) {
 		}
 	}
 
-	// ´ä¾È Ãâ·Â
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	cout << black << " " << white << "\n";
-	for (int i = 0; i < 8; i++) {
-		for (int j = 0; j < 8; j++) {
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
 			cout << arr[j][i];
 		}
 		cout << "\n";
 	}
 
-	for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < 8; i++)
+	{
 		delete[] arr[i];
 	}
 	delete[] arr;

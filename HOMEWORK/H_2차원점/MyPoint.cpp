@@ -11,7 +11,7 @@ MyPoint::MyPoint(int coordX, int coordY)
 	this->y = coordY;
 }
 
-MyPoint::MyPoint(const MyPoint& p)
+MyPoint::MyPoint(const MyPoint &p)
 {
 	this->x = p.x;
 	this->y = p.y;
@@ -39,22 +39,22 @@ void MyPoint::setY(int coordY)
 	this->y = coordY;
 }
 
-bool MyPoint::operator == (const MyPoint& p) const
+bool MyPoint::operator==(const MyPoint &p) const
 {
 	return (this->x == p.x) && (this->y == p.y);
 }
 
-bool MyPoint::operator != (const MyPoint& p) const
+bool MyPoint::operator!=(const MyPoint &p) const
 {
 	return !operator==(p);
 }
 
-int MyPoint::dist2sqr(const MyPoint& p) const
+int MyPoint::dist2sqr(const MyPoint &p) const
 {
 	return (this->x - p.x) * (this->x - p.x) + (this->y - p.y) * (this->y - p.y);
 }
 
-int MyPoint::dist1(const MyPoint& p) const
+int MyPoint::dist1(const MyPoint &p) const
 {
 	return abs(this->x - p.x) + abs(this->y - p.y);
 }

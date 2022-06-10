@@ -8,70 +8,71 @@ using namespace std;
 class myRational
 {
 private:
-	// ºÐ¼ö´Â Ç×»ó ³»ºÎÀûÀ¸·Î ±â¾àºÐ¼ö·Î Ç¥ÇöÇÏ¸ç, ¶ÇÇÑ Ç×»ó _den>0 ÀÌ´Ù.
-	long _num; // numerator ºÐÀÚ
-	long _den; // denominator ºÐ¸ð
-	long gcd(long m, long n); // ÃÖ´ë°ø¾à¼ö
+	// ï¿½Ð¼ï¿½ï¿½ï¿½ ï¿½×»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ï¸ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ _den>0 ï¿½Ì´ï¿½.
+	long _num;				  // numerator ï¿½ï¿½ï¿½ï¿½
+	long _den;				  // denominator ï¿½Ð¸ï¿½
+	long gcd(long m, long n); // ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½
 	void reduce();
+
 public:
 	myRational(long num = 0, long den = 1);
-	myRational(const myRational& rat);
-	
+	myRational(const myRational &rat);
+
 	long getNumerator() const;
 	long getDenominator() const;
 
 	myRational reciprocal();
 
-	myRational operator + (const myRational& rat) const;
-	myRational operator - (const myRational& rat) const;
-	myRational operator * (const myRational& rat) const;
-	myRational operator / (const myRational& rat) const;
+	myRational operator+(const myRational &rat) const;
+	myRational operator-(const myRational &rat) const;
+	myRational operator*(const myRational &rat) const;
+	myRational operator/(const myRational &rat) const;
 
-	myRational operator + (const int value) const;
-	myRational operator - (const int value) const;
-	myRational operator * (const int value) const;
-	myRational operator / (const int value) const;
+	myRational operator+(const int value) const;
+	myRational operator-(const int value) const;
+	myRational operator*(const int value) const;
+	myRational operator/(const int value) const;
 
-	friend myRational operator + (int value, const myRational& rat);
-	friend myRational operator - (int value, const myRational& rat);
-	friend myRational operator * (int value, const myRational& rat);
-	friend myRational operator / (int value, const myRational& rat);
+	friend myRational operator+(int value, const myRational &rat);
+	friend myRational operator-(int value, const myRational &rat);
+	friend myRational operator*(int value, const myRational &rat);
+	friend myRational operator/(int value, const myRational &rat);
 
-	myRational& operator ++();
-	myRational operator ++(int);
-	myRational& operator --();
-	myRational operator --(int);
+	myRational &operator++();
+	myRational operator++(int);
+	myRational &operator--();
+	myRational operator--(int);
 
-	myRational operator -();
+	myRational operator-();
 
-	bool operator < (const myRational& rat) const;
-	bool operator <= (const myRational& rat) const;
-	bool operator > (const myRational& rat) const;
-	bool operator >= (const myRational& rat) const;
-	bool operator == (const myRational& rat) const;
-	bool operator != (const myRational& rat) const;
+	bool operator<(const myRational &rat) const;
+	bool operator<=(const myRational &rat) const;
+	bool operator>(const myRational &rat) const;
+	bool operator>=(const myRational &rat) const;
+	bool operator==(const myRational &rat) const;
+	bool operator!=(const myRational &rat) const;
 
-	bool operator < (const int value) const;
-	bool operator <= (const int value) const;
-	bool operator > (const int value) const;
-	bool operator >= (const int value) const;
-	bool operator == (const int value) const;
-	bool operator != (const int value) const;
+	bool operator<(const int value) const;
+	bool operator<=(const int value) const;
+	bool operator>(const int value) const;
+	bool operator>=(const int value) const;
+	bool operator==(const int value) const;
+	bool operator!=(const int value) const;
 
-	myRational &operator = (const myRational& rat);
-	myRational &operator += (const myRational& rat);
-	myRational &operator -= (const myRational& rat);
-	myRational &operator *= (const myRational& rat);
-	myRational &operator /= (const myRational& rat);
+	myRational &operator=(const myRational &rat);
+	myRational &operator+=(const myRational &rat);
+	myRational &operator-=(const myRational &rat);
+	myRational &operator*=(const myRational &rat);
+	myRational &operator/=(const myRational &rat);
 
-	myRational &operator = (const int value);
-	myRational &operator += (const int value);
-	myRational &operator -= (const int value);
-	myRational &operator *= (const int value);
-	myRational &operator /= (const int value);
+	myRational &operator=(const int value);
+	myRational &operator+=(const int value);
+	myRational &operator-=(const int value);
+	myRational &operator*=(const int value);
+	myRational &operator/=(const int value);
 
-	friend ostream& operator <<(ostream& outStream, const myRational& r);
-	friend istream& operator >>(istream& inStream, myRational& r);
+	friend ostream &operator<<(ostream &outStream, const myRational &r);
+	friend istream &operator>>(istream &inStream, myRational &r);
 };
 
 #endif

@@ -18,7 +18,9 @@ void testSimpleCase()
 	myComplex c4, c5, c6, c7, c8, c9;
 
 	// test constructor
-	cout << c0 << endl << c1 << endl << c2 << endl;
+	cout << c0 << endl
+		 << c1 << endl
+		 << c2 << endl;
 
 	// test copy constructor
 	cout << c3 << endl;
@@ -38,22 +40,30 @@ void testSimpleCase()
 	c4 = c1 + c3;
 	c5 = c1 - c3;
 	c6 = c4 * c5;
-	cout << c4 << endl << c5 << endl << c6 << endl;
+	cout << c4 << endl
+		 << c5 << endl
+		 << c6 << endl;
 
 	c7 = c6 + 2;
 	c8 = c6 - 2;
 	c9 = c6 * 2;
-	cout << c7 << endl << c8 << endl << c9 << endl;
+	cout << c7 << endl
+		 << c8 << endl
+		 << c9 << endl;
 
 	c7 += c4;
 	c8 -= c5;
 	c9 *= c6;
-	cout << c7 << endl << c8 << endl << c9 << endl;
+	cout << c7 << endl
+		 << c8 << endl
+		 << c9 << endl;
 
 	c7 += 2;
 	c8 -= 2;
 	c9 *= 2;
-	cout << c7 << endl << c8 << endl << c9 << endl;
+	cout << c7 << endl
+		 << c8 << endl
+		 << c9 << endl;
 
 	// test comparison operators
 	cout << (c8 != c9) << " " << (c8 == c9) << endl;

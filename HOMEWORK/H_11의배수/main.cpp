@@ -3,47 +3,61 @@
 
 using namespace std;
 
-string solve(string num) {
+string solve(string num)
+{
 	int numLength = num.length();
 
-	if (numLength == 1) return "0";
+	if (numLength == 1)
+		return "0";
 
-	int* arr = new int[numLength];
-	for (int i = 0; i < numLength; i++) { // string(char[]) -> int[]
+	int *arr = new int[numLength];
+	for (int i = 0; i < numLength; i++)
+	{ // string(char[]) -> int[]
 		arr[i] = num[i] - '0';
 	}
 
-	for (int i = numLength - 1; i > 0; i--) {
-		if (arr[i - 1] >= arr[i]) arr[i - 1] -= arr[i];
-		else {
-			if ((i - 2) >= 0) { // for index out of range error
+	for (int i = numLength - 1; i > 0; i--)
+	{
+		if (arr[i - 1] >= arr[i])
+			arr[i - 1] -= arr[i];
+		else
+		{
+			if ((i - 2) >= 0)
+			{ // for index out of range error
 				arr[i - 1] -= (arr[i] - 10);
 				arr[i - 2]--;
 			}
-			else return "0";
+			else
+				return "0";
 		}
 	}
 
-	if (arr[0] == 0) {
+	if (arr[0] == 0)
+	{
 		string result;
-		for (int i = 1; i < numLength; i++) {// int[] -> string(chars)
+		for (int i = 1; i < numLength; i++)
+		{ // int[] -> string(chars)
 			result.push_back(char(arr[i] + 48));
 		}
-			// 11 * 987654321ÀÎ 10864197531ÀÇ °æ¿ì 0987654321·Î Ãâ·ÂµÇ´Â °ÍÀ» È®ÀÎÇÔ
-			// 0À¸·Î ½ÃÀÛÇÏ´Â °æ¿ì, ±× ´ÙÀ½ ¿ø¼Òµµ 0ÀÌ µÇÁö´Â ¾ÊÀ½. 93 -> 96
-		if (result.front() == '0') return result.substr(1);
+		// 11 * 987654321ï¿½ï¿½ 10864197531ï¿½ï¿½ ï¿½ï¿½ï¿½ 0987654321ï¿½ï¿½ ï¿½ï¿½ÂµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½
+		// 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Òµï¿½ 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. 93 -> 96
+		if (result.front() == '0')
+			return result.substr(1);
 		return result;
 	}
-	else return "0";
+	else
+		return "0";
 
 	delete[] arr;
 }
 
-int main() {
+int main()
+{
 	int t;
 	cin >> t;
-	
-	for (int i = 0; i < t; i++) {
+
+	for (int i = 0; i < t; i++)
+	{
 		string num;
 		cin >> num;
 		cout << solve(num) << endl;

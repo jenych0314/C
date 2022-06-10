@@ -75,13 +75,15 @@ void testDataFromFile()
 		int cnt;
 		inStream >> cnt;
 
-		myRational* arr = new myRational[cnt];
-		for (int j = 0; j < cnt; j++) {
+		myRational *arr = new myRational[cnt];
+		for (int j = 0; j < cnt; j++)
+		{
 			inStream >> arr[j];
 		}
 
 		sort(arr, arr + cnt, cmp);
-		for (int j = 0; j < cnt; j++) {
+		for (int j = 0; j < cnt; j++)
+		{
 			cout << arr[j] << " ";
 		}
 		cout << "\n";
@@ -92,6 +94,7 @@ void testDataFromFile()
 	inStream.close();
 }
 
-bool cmp(myRational left, myRational right) {
+bool cmp(myRational left, myRational right)
+{
 	return left < right;
 }

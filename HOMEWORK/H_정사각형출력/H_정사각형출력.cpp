@@ -2,57 +2,76 @@
 
 using namespace std;
 
-void solve(int n) {
-	char** arr = new char* [n];
-	for (int i = 0; i < n; i++) {
+void solve(int n)
+{
+	char **arr = new char *[n];
+	for (int i = 0; i < n; i++)
+	{
 		arr[i] = new char[n];
 	}
 
-	// 1. . Ã¤¿î´Ù
-	// 2. -, |, \, / Ã¤¿î´Ù
-	// 3. + Ã¤¿î´Ù
-	// 4. * Ã¤¿î´Ù
-	for (int i = 0; i < n; i++) {
+	// 1. . Ã¤ï¿½ï¿½ï¿½
+	// 2. -, |, \, / Ã¤ï¿½ï¿½ï¿½
+	// 3. + Ã¤ï¿½ï¿½ï¿½
+	// 4. * Ã¤ï¿½ï¿½ï¿½
+	for (int i = 0; i < n; i++)
+	{
 		bool row = false;
-		if (i == 0 || i == n - 1 || i == (n - 1) / 2) row = true;
-		for (int j = 0; j < n; j++) {
+		if (i == 0 || i == n - 1 || i == (n - 1) / 2)
+			row = true;
+		for (int j = 0; j < n; j++)
+		{
 			bool col = false, upward = false, downward = false;
 
-			if (j == 0 || j == n - 1 || j == (n - 1) / 2) col = true;
-			if (i == j) downward = true;
-			if (i + j == n - 1) upward = true;
+			if (j == 0 || j == n - 1 || j == (n - 1) / 2)
+				col = true;
+			if (i == j)
+				downward = true;
+			if (i + j == n - 1)
+				upward = true;
 
 			arr[i][j] = '.';
 
-			if (row) arr[i][j] = '-';
-			else if (col) arr[i][j] = '|';
-			else if (upward) arr[i][j] = '/';
-			else if (downward) arr[i][j] = '\\';
+			if (row)
+				arr[i][j] = '-';
+			else if (col)
+				arr[i][j] = '|';
+			else if (upward)
+				arr[i][j] = '/';
+			else if (downward)
+				arr[i][j] = '\\';
 
-			if (row && col) arr[i][j] = '+';
+			if (row && col)
+				arr[i][j] = '+';
 
-			if (row && col && upward && downward) arr[i][j] = '*';
+			if (row && col && upward && downward)
+				arr[i][j] = '*';
 		}
 	}
-	
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
 			cout << arr[i][j];
 		}
 		cout << '\n';
 	}
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
+	{
 		delete[] arr[i];
 	}
 	delete[] arr;
 }
 
-int main() {
+int main()
+{
 	int T, n;
 	cin >> T;
 
-	for (int i = 0; i < T; i++) {
+	for (int i = 0; i < T; i++)
+	{
 		cin >> n;
 		solve(n);
 	}

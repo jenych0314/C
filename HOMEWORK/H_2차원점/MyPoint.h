@@ -3,30 +3,30 @@
 
 class MyPoint
 {
-	public:
-		// constructors
-		MyPoint();
-		MyPoint(int coordX, int coordY);
-		MyPoint(const MyPoint& p);
+public:
+	// constructors
+	MyPoint();
+	MyPoint(int coordX, int coordY);
+	MyPoint(const MyPoint &p);
 
-		// accessor functions
-		int getX() const;
-		int getY() const;
+	// accessor functions
+	int getX() const;
+	int getY() const;
 
-		// mutator function
-		void setX(int x);
-		void setY(int y);
+	// mutator function
+	void setX(int x);
+	void setY(int y);
 
-		// comparison operators
-		bool operator== (const MyPoint& p) const;
-		bool operator!= (const MyPoint& p) const;
+	// comparison operators
+	bool operator==(const MyPoint &p) const;
+	bool operator!=(const MyPoint &p) const;
 
-		// utility functions
-		int dist2sqr(const MyPoint& p) const; // Á÷¼±°Å¸®(Euclidean distance)ÀÇ Á¦°öÀ» °è»ê
-		int dist1(const MyPoint& p) const; // Á÷°¢°Å¸®(rectilinear distance)¸¦ °è»ê
+	// utility functions
+	int dist2sqr(const MyPoint &p) const; // ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½(Euclidean distance)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	int dist1(const MyPoint &p) const;	  // ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½(rectilinear distance)ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-	private:
-		int x, y;
+private:
+	int x, y;
 };
 
 #endif // _MY_POINT_H_

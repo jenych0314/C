@@ -19,10 +19,12 @@ int main()
 		MyPoint p2(coordX, coordY);
 
 		if (p1 == p2)
-			cout << "1" << " ";
+			cout << "1"
+				 << " ";
 
 		if (p1 != p2)
-			cout << "0" << " ";
+			cout << "0"
+				 << " ";
 
 		cout << p1.dist2sqr(p2) << " " << p1.dist1(p2) << " ";
 
