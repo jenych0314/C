@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 #define MAX_SIZE 1000
 
@@ -43,18 +44,18 @@ void swap(int* a, int* b)
 	*b = tmp;
 }
 
-/* BubbleSort 함수 */
 void bubbleSort(int arr[], int n)
 {
-	int countCmpOps = 0; // 비교 연산자 실행 횟수
-	int countSwaps = 0; // swap 함수 실행 횟수
+	int countCmpOps = 0;
+	int countSwaps = 0;
 
-	// bubble sort 알고리즘 구현
 	for (int i = 1; i < n; i++) {
 		for (int j = 1; j <= n - i; j++) {
 			countCmpOps++;
+
 			if (arr[j - 1] > arr[j]) {
 				swap(arr[j - 1], arr[j]);
+
 				countSwaps++;
 			}
 		}
@@ -63,44 +64,61 @@ void bubbleSort(int arr[], int n)
 	printf("%d %d ", countCmpOps, countSwaps);
 }
 
-/* BubbleSort 함수 - Improved Version 1 */
 void bubbleSortImproved1(int arr[], int n)
 {
-	int countCmpOps = 0; // 비교 연산자 실행 횟수
-	int countSwaps = 0; // swap 함수 실행 횟수
+	int countCmpOps = 0;
+	int countSwaps = 0;
 	bool swapped;
 
-	// bubble sort의 개선된 알고리즘 (1) 구현
 	for (int i = 1; i < n; i++) {
 		swapped = false;
 
 		for (int j = 1; j <= n - i; j++) {
+			countCmpOps++;
+
 			if (arr[j - 1] > arr[j]) {
 				swap(arr[j - 1], arr[j]);
 				swapped = true;
+
+				countSwaps++;
 			}
 		}
 
 		if (swapped == false)
 			break;
 	}
+
 	printf("%d %d ", countCmpOps, countSwaps);
 }
 
-/* BubbleSort 함수 - Improved Version 2 */
-void bubbleSortImproved2(int a[], int n)
+void bubbleSortImproved2(int arr[], int n)
 {
-	int countCmpOps = 0; // 비교 연산자 실행 횟수
-	int countSwaps = 0; // swap 함수 실행 횟수
-	int last;
-	// bubble sort의 개선된 알고리즘 (2) 구현
+	int countCmpOps = 0;
+	int countSwaps = 0;
+	int lastSwappedPos = n, swappedPos;
 
+	while (lastSwappedPos > 0) {
+		swappedPos = 0;
+
+		for (int i = 1; i < lastSwappedPos; i++) {
+			countCmpOps++;
+
+			if (arr[i - 1] > arr[i]) {
+				swao(arr[i - 1], arr[i]);
+				swappedPos = i;
+
+				countSwaps++;
+			}
+		}
+
+		lastSwappedPos = swappedPos;
+	}
 
 	printf("%d %d ", countCmpOps, countSwaps);
 }
 
-void copyArray(int a[], int b[], int n)
+void copyArray(int arr1[], int arr2[], int n)
 {
 	for (int i = 0; i < n; i++)
-		a[i] = b[i];
+		arr1[i] = arr2[i];
 }
